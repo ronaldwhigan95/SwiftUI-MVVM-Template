@@ -7,7 +7,10 @@
 
 import Foundation
 
-class LoginViewModel: WebViewModel {
+class LoginViewModel: ViewModel {
+    
+  
+    
     func getList<T>() -> [T] where T : Decodable, T : Encodable {
         //Do something
         return [DummyModel]() as! [T]

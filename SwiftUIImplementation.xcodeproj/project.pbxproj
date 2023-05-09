@@ -23,6 +23,8 @@
 		F30ADFCB2A0ADADB00BC2722 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFCA2A0ADADB00BC2722 /* PostModel.swift */; };
 		F30ADFCE2A0AEC1F00BC2722 /* EntityToModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFCD2A0AEC1F00BC2722 /* EntityToModelMapper.swift */; };
 		F30ADFD02A0AEC5100BC2722 /* ModelToEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFCF2A0AEC5100BC2722 /* ModelToEntityMapper.swift */; };
+		F30ADFD52A0AEF8C00BC2722 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFD42A0AEF8C00BC2722 /* DashboardViewModel.swift */; };
+		F30ADFD72A0AF10800BC2722 /* TempManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFD62A0AF10800BC2722 /* TempManager.swift */; };
 		F3123CFC2A0A8DC700E6F8AA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3123CFB2A0A8DC700E6F8AA /* DashboardView.swift */; };
 		F3123D072A0A8E9F00E6F8AA /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3123D062A0A8E9F00E6F8AA /* ViewProtocol.swift */; };
 		F3123D092A0A8EAD00E6F8AA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3123D082A0A8EAD00E6F8AA /* ViewModel.swift */; };
@@ -49,6 +51,8 @@
 		F30ADFCA2A0ADADB00BC2722 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		F30ADFCD2A0AEC1F00BC2722 /* EntityToModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityToModelMapper.swift; sourceTree = "<group>"; };
 		F30ADFCF2A0AEC5100BC2722 /* ModelToEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelToEntityMapper.swift; sourceTree = "<group>"; };
+		F30ADFD42A0AEF8C00BC2722 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		F30ADFD62A0AF10800BC2722 /* TempManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempManager.swift; sourceTree = "<group>"; };
 		F3123CFB2A0A8DC700E6F8AA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F3123D062A0A8E9F00E6F8AA /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
 		F3123D082A0A8EAD00E6F8AA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 		F30ADFA02A0AAAEE00BC2722 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F30ADFD62A0AF10800BC2722 /* TempManager.swift */,
 				F30ADFA32A0AACD500BC2722 /* Manager.swift */,
 			);
 			path = Managers;
@@ -112,13 +117,6 @@
 			children = (
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		F30ADFB12A0AAD8400BC2722 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		F30ADFB92A0AD82200BC2722 /* User */ = {
@@ -174,6 +172,14 @@
 			path = Mappers;
 			sourceTree = "<group>";
 		};
+		F30ADFD32A0AEF8100BC2722 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F30ADFD42A0AEF8C00BC2722 /* DashboardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F3123CFD2A0A8DE900E6F8AA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +197,6 @@
 			children = (
 				F30ADFBA2A0AD82B00BC2722 /* Post */,
 				F30ADFB92A0AD82200BC2722 /* User */,
-				F30ADFB12A0AAD8400BC2722 /* Login */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,7 +222,7 @@
 		F3123D012A0A8E1F00E6F8AA /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				F3123D032A0A8E6E00E6F8AA /* ViewModel */,
+				F30ADFD32A0AEF8100BC2722 /* ViewModel */,
 				F3123D022A0A8E2A00E6F8AA /* View */,
 			);
 			path = Dashboard;
@@ -229,13 +234,6 @@
 				F3123CFB2A0A8DC700E6F8AA /* DashboardView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		F3123D032A0A8E6E00E6F8AA /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F3123D042A0A8E8000E6F8AA /* View */ = {
@@ -377,6 +375,8 @@
 				F3123CFC2A0A8DC700E6F8AA /* DashboardView.swift in Sources */,
 				F30ADFB62A0AADFB00BC2722 /* WebViewModel.swift in Sources */,
 				F30ADFB02A0AAD6C00BC2722 /* ApiEndpoints.swift in Sources */,
+				F30ADFD52A0AEF8C00BC2722 /* DashboardViewModel.swift in Sources */,
+				F30ADFD72A0AF10800BC2722 /* TempManager.swift in Sources */,
 				F30ADFA62A0AACF700BC2722 /* ApiService.swift in Sources */,
 				F30ADFB82A0AD7CF00BC2722 /* HttpMethods.swift in Sources */,
 				F30ADFCB2A0ADADB00BC2722 /* PostModel.swift in Sources */,

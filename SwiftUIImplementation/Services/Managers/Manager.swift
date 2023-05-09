@@ -8,5 +8,6 @@
 import Foundation
 
 protocol Manager {
-    
+    associatedtype WebServiceType: WebService
+    var webService: WebServiceType { get }
 }

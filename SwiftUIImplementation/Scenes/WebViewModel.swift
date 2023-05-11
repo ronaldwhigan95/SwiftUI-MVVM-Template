@@ -8,5 +8,7 @@
 import Foundation
 
 protocol WebViewModel : ViewModel {
+    associatedtype ManagerType: Manager
+    var manager: ManagerType { get }
     func getList<T:Codable>() -> [T]
 }

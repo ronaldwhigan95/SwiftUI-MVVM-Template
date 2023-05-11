@@ -10,7 +10,9 @@ import Foundation
 typealias CompletionHandler<T> = ((Result<T, Error>) -> ())?
 
 class ApiService {
- var web = WebService()
+    
+    static var shared = ApiService()
+    
     func sendRequest<T: Codable>(url: String, method: HTTPMethod, headers: [String:String]?, model: T.Type, completionBlock: CompletionHandler<Any>) {
         guard let urlRequest = URL(string: url) else { return }
         let semaphore = DispatchSemaphore(value: 0)

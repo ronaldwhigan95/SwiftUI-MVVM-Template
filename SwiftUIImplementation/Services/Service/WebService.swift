@@ -8,48 +8,43 @@
 import Foundation
 
 class WebService {
-    fileprivate var apiService = ApiService()
-
-    func getRequest(url: String) -> () -> Void {
+    
+    let apiService = ApiService.shared
+    
+    func get<T:Codable>(url: String, headers:[String:String]?,model: T.Type, completionBlock: CompletionHandler<Any>) -> () -> Void {
         return {
-            // Perform GET request logic with the provided URL
-            print("GET request to: \(url)")
+            self.apiService.sendRequest(url: url, method: .get, headers: headers, model: model, completionBlock: completionBlock)
         }
     }
     
-    func postRequest(url: String, body: [String: Any]) -> () -> Void {
+    func post<T:Codable>(url: String, headers:[String:String]?,model: T.Type, completionBlock: CompletionHandler<Any>) -> () -> Void {
         return {
-            // Perform POST request logic with the provided URL and body
-            print("POST request to: \(url)")
-            print("Body: \(body)")
+            self.apiService.sendRequest(url: url, method: .post, headers: headers, model: model, completionBlock: completionBlock)
         }
     }
     
-    func putRequest(url: String, body: [String: Any]) -> () -> Void {
+    func put<T:Codable>(url: String, headers:[String:String]?,model: T.Type, completionBlock: CompletionHandler<Any>) -> () -> Void {
         return {
-            // Perform PUT request logic with the provided URL and body
-            print("PUT request to: \(url)")
-            print("Body: \(body)")
+            self.apiService.sendRequest(url: url, method: .put, headers: headers, model: model, completionBlock: completionBlock)
         }
     }
     
-    func deleteRequest(url: String) -> () -> Void {
+    func delete<T:Codable>(url: String, headers:[String:String]?,model: T.Type, completionBlock: CompletionHandler<Any>) -> () -> Void {
         return {
-            // Perform DELETE request logic with the provided URL
-            print("DELETE request to: \(url)")
+            self.apiService.sendRequest(url: url, method: .delete, headers: headers, model: model, completionBlock: completionBlock)
         }
     }
     
-    func performRequest(for httpMethod: HTTPMethod, url: String, body: [String: Any] = [:]) -> () -> Void {
-        switch httpMethod {
+    func performRequest<T:Codable>(url: String,for headers:[String:String]?,model: T.Type, method: HTTPMethod, completionBlock: CompletionHandler<Any>) -> () -> Void {
+        switch method {
         case .get:
-            return getRequest(url: url)
+            return get(url: url, headers:headers,model:model,completionBlock: completionBlock)
         case .post:
-            return postRequest(url: url, body: body)
+            return post(url: url, headers:headers,model:model,completionBlock: completionBlock)
         case .put:
-            return putRequest(url: url, body: body)
+            return put(url: url, headers:headers,model:model,completionBlock: completionBlock)
         case .delete:
-            return deleteRequest(url: url)
+            return delete(url: url, headers:headers,model:model,completionBlock: completionBlock)
         }
     }
 }

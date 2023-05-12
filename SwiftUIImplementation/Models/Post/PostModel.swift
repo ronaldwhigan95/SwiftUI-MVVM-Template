@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PostModel {
+struct PostModel: Model {
     let userId: Int
     let title: String
     let body: String

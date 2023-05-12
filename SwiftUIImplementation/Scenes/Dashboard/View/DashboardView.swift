@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct DashboardView: View {
+    @StateObject private var viewModel = DashboardViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+            List {
+                ForEach(viewModel.users.users) { user in
+                    Text(user.firstName)
+                }
+            }
+            .onAppear {
+                viewModel.getUsers()
+            }
+        }
 }
 
 struct DashboardView_Previews: PreviewProvider {

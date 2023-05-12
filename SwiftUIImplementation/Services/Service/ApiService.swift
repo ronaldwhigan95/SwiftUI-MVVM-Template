@@ -13,10 +13,11 @@ class ApiService {
     
     static var shared = ApiService()
     
-    func sendRequest<T: Codable>(url: String, method: HTTPMethod, headers: [String:String]?, model: T.Type, completionBlock: CompletionHandler<Any>) {
+    func sendRequest<T: Codable>(url: String, method: HTTPMethod, headers: [String:String]?, entity: T.Type, completionBlock: CompletionHandler<Any>) {
         guard let urlRequest = URL(string: url) else { return }
         let semaphore = DispatchSemaphore(value: 0)
         var request = URLRequest(url: urlRequest)
+        
         let defaultHeaders = [
             "Content-Type": "application/json",
             "Accept": "application/json",

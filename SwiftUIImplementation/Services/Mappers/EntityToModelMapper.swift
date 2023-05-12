@@ -8,8 +8,9 @@
 import Foundation
 
 protocol EntityToModelMapper {
-    associatedtype Entity
-    associatedtype Model
+    associatedtype ObjectEntity: Codable
+    associatedtype ObjectModel: Model
 
-    func mapToModel(entity: Entity) -> Model
+    
+    func mapToModel(entity: ObjectEntity) -> ObjectModel
 }

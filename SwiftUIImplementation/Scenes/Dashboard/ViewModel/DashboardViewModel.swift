@@ -7,11 +7,21 @@
 
 import Foundation
 
-class DashboardViewModel: WebViewModel {
-
-    var manager: TempManager = TempManager()
+class DashboardViewModel: WebViewModel, ObservableObject {
+    var manager: UserManager = UserManager()
     
-    func getList<T>() -> [T] where T : Decodable, T : Encodable {
-        return [T]()
-    }
+    @Published var users: UsersModel = UsersModel(users: [UserModel(id: 0, firstName: "", lastName: "", email: "", image: "")])
+    
+    func getUsers() {
+            manager.getUsers { [weak self] result in
+                switch result {
+                case .success(let usersModel):
+                    DispatchQueue.main.async {
+                        self?.users = usersModel
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }
+        }
 }

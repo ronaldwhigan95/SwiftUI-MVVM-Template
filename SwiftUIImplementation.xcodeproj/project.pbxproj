@@ -24,8 +24,11 @@
 		F30ADFCE2A0AEC1F00BC2722 /* EntityToModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFCD2A0AEC1F00BC2722 /* EntityToModelMapper.swift */; };
 		F30ADFD02A0AEC5100BC2722 /* ModelToEntityMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFCF2A0AEC5100BC2722 /* ModelToEntityMapper.swift */; };
 		F30ADFD52A0AEF8C00BC2722 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFD42A0AEF8C00BC2722 /* DashboardViewModel.swift */; };
-		F30ADFD72A0AF10800BC2722 /* TempManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFD62A0AF10800BC2722 /* TempManager.swift */; };
+		F30ADFD72A0AF10800BC2722 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFD62A0AF10800BC2722 /* UserManager.swift */; };
 		F30ADFDA2A0D6B1200BC2722 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFD92A0D6B1200BC2722 /* HTTPURLResponse.swift */; };
+		F30ADFDD2A0D8A4400BC2722 /* UsersEntityToModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFDC2A0D8A4400BC2722 /* UsersEntityToModelMapper.swift */; };
+		F30ADFDF2A0D8C9C00BC2722 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFDE2A0D8C9C00BC2722 /* Model.swift */; };
+		F30ADFE12A0D912A00BC2722 /* UserEntityToModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30ADFE02A0D912A00BC2722 /* UserEntityToModelMapper.swift */; };
 		F3123CFC2A0A8DC700E6F8AA /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3123CFB2A0A8DC700E6F8AA /* DashboardView.swift */; };
 		F3123D072A0A8E9F00E6F8AA /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3123D062A0A8E9F00E6F8AA /* ViewProtocol.swift */; };
 		F3123D092A0A8EAD00E6F8AA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3123D082A0A8EAD00E6F8AA /* ViewModel.swift */; };
@@ -53,8 +56,11 @@
 		F30ADFCD2A0AEC1F00BC2722 /* EntityToModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityToModelMapper.swift; sourceTree = "<group>"; };
 		F30ADFCF2A0AEC5100BC2722 /* ModelToEntityMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelToEntityMapper.swift; sourceTree = "<group>"; };
 		F30ADFD42A0AEF8C00BC2722 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		F30ADFD62A0AF10800BC2722 /* TempManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempManager.swift; sourceTree = "<group>"; };
+		F30ADFD62A0AF10800BC2722 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		F30ADFD92A0D6B1200BC2722 /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
+		F30ADFDC2A0D8A4400BC2722 /* UsersEntityToModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersEntityToModelMapper.swift; sourceTree = "<group>"; };
+		F30ADFDE2A0D8C9C00BC2722 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F30ADFE02A0D912A00BC2722 /* UserEntityToModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntityToModelMapper.swift; sourceTree = "<group>"; };
 		F3123CFB2A0A8DC700E6F8AA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		F3123D062A0A8E9F00E6F8AA /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
 		F3123D082A0A8EAD00E6F8AA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -90,7 +96,7 @@
 		F30ADFA02A0AAAEE00BC2722 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				F30ADFD62A0AF10800BC2722 /* TempManager.swift */,
+				F30ADFD62A0AF10800BC2722 /* UserManager.swift */,
 				F30ADFA32A0AACD500BC2722 /* Manager.swift */,
 			);
 			path = Managers;
@@ -161,6 +167,7 @@
 		F30ADFCC2A0AEB7000BC2722 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
+				F30ADFDB2A0D8A2900BC2722 /* Users */,
 				F30ADFCD2A0AEC1F00BC2722 /* EntityToModelMapper.swift */,
 				F30ADFCF2A0AEC5100BC2722 /* ModelToEntityMapper.swift */,
 			);
@@ -183,6 +190,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F30ADFDB2A0D8A2900BC2722 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				F30ADFDC2A0D8A4400BC2722 /* UsersEntityToModelMapper.swift */,
+				F30ADFE02A0D912A00BC2722 /* UserEntityToModelMapper.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		F3123CFD2A0A8DE900E6F8AA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +216,7 @@
 			children = (
 				F30ADFBA2A0AD82B00BC2722 /* Post */,
 				F30ADFB92A0AD82200BC2722 /* User */,
+				F30ADFDE2A0D8C9C00BC2722 /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,6 +382,7 @@
 			files = (
 				F30ADFBF2A0AD94900BC2722 /* UserEntity.swift in Sources */,
 				F3123D092A0A8EAD00E6F8AA /* ViewModel.swift in Sources */,
+				F30ADFE12A0D912A00BC2722 /* UserEntityToModelMapper.swift in Sources */,
 				F30ADFDA2A0D6B1200BC2722 /* HTTPURLResponse.swift in Sources */,
 				F30ADFC32A0AD95700BC2722 /* PostEntity.swift in Sources */,
 				F30ADFA42A0AACD500BC2722 /* Manager.swift in Sources */,
@@ -380,7 +398,9 @@
 				F30ADFB62A0AADFB00BC2722 /* WebViewModel.swift in Sources */,
 				F30ADFB02A0AAD6C00BC2722 /* ApiEndpoints.swift in Sources */,
 				F30ADFD52A0AEF8C00BC2722 /* DashboardViewModel.swift in Sources */,
-				F30ADFD72A0AF10800BC2722 /* TempManager.swift in Sources */,
+				F30ADFD72A0AF10800BC2722 /* UserManager.swift in Sources */,
+				F30ADFDD2A0D8A4400BC2722 /* UsersEntityToModelMapper.swift in Sources */,
+				F30ADFDF2A0D8C9C00BC2722 /* Model.swift in Sources */,
 				F30ADFA62A0AACF700BC2722 /* ApiService.swift in Sources */,
 				F30ADFB82A0AD7CF00BC2722 /* HttpMethods.swift in Sources */,
 				F30ADFCB2A0ADADB00BC2722 /* PostModel.swift in Sources */,

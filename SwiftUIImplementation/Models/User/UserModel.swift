@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserModel {
+struct UserModel: Model, Identifiable {
     let id: Int
     let firstName: String
     let lastName: String

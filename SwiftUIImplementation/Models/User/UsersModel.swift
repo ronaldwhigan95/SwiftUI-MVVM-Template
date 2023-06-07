@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UsersModel: Model, Identifiable {
+struct UsersModel: Model {
     let id = UUID()
     let users: [UserModel]
 }

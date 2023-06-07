@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct PostsEntity: Codable {
+    let posts: [PostEntity]
+}

@@ -7,10 +7,24 @@
 
 import Foundation
 
-struct UserModel: Model, Identifiable {
+struct UserModel: Model {
     let id: Int
-    let firstName: String
-    let lastName: String
+//   @UpperCased var firstName: String
+    var firstName: String
+    var lastName: String
     let email: String
     let image: String
+}
+
+
+//Sample of property Wrapper
+@propertyWrapper class UpperCased {
+    var wrappedValue: String = "" {
+        didSet {
+            wrappedValue = wrappedValue.uppercased()
+        }
+    }
+    init(wrappedValue: String) {
+        self.wrappedValue = wrappedValue.uppercased()
+    }
 }

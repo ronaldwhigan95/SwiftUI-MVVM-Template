@@ -36,6 +36,11 @@
 		F3A817402A094EF6002DD130 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A8173F2A094EF6002DD130 /* LoginView.swift */; };
 		F3A817422A094EF8002DD130 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3A817412A094EF8002DD130 /* Assets.xcassets */; };
 		F3A817452A094EF8002DD130 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3A817442A094EF8002DD130 /* Preview Assets.xcassets */; };
+		F3C3EB7F2A2FA2E40001F090 /* WebSourcedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3EB7E2A2FA2E40001F090 /* WebSourcedImage.swift */; };
+		F3C3EB812A2FC29C0001F090 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3EB802A2FC29C0001F090 /* PostManager.swift */; };
+		F3C3EB842A2FC3DB0001F090 /* PostEntityToModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3EB832A2FC3DB0001F090 /* PostEntityToModelMapper.swift */; };
+		F3C3EB862A2FC3F50001F090 /* PostsEnitityToModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3EB852A2FC3F50001F090 /* PostsEnitityToModelMapper.swift */; };
+		F3C3EB882A2FC4AC0001F090 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C3EB872A2FC4AC0001F090 /* PostsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +74,11 @@
 		F3A8173F2A094EF6002DD130 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F3A817412A094EF8002DD130 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3A817442A094EF8002DD130 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3C3EB7E2A2FA2E40001F090 /* WebSourcedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSourcedImage.swift; sourceTree = "<group>"; };
+		F3C3EB802A2FC29C0001F090 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		F3C3EB832A2FC3DB0001F090 /* PostEntityToModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntityToModelMapper.swift; sourceTree = "<group>"; };
+		F3C3EB852A2FC3F50001F090 /* PostsEnitityToModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsEnitityToModelMapper.swift; sourceTree = "<group>"; };
+		F3C3EB872A2FC4AC0001F090 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F30ADFD62A0AF10800BC2722 /* UserManager.swift */,
+				F3C3EB802A2FC29C0001F090 /* PostManager.swift */,
 				F30ADFA32A0AACD500BC2722 /* Manager.swift */,
 			);
 			path = Managers;
@@ -133,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F30ADFCA2A0ADADB00BC2722 /* PostModel.swift */,
+				F3C3EB872A2FC4AC0001F090 /* PostsModel.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -167,6 +179,7 @@
 		F30ADFCC2A0AEB7000BC2722 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
+				F3C3EB822A2FC3BE0001F090 /* Posts */,
 				F30ADFDB2A0D8A2900BC2722 /* Users */,
 				F30ADFCD2A0AEC1F00BC2722 /* EntityToModelMapper.swift */,
 				F30ADFCF2A0AEC5100BC2722 /* ModelToEntityMapper.swift */,
@@ -202,6 +215,7 @@
 		F3123CFD2A0A8DE900E6F8AA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F3C3EB7D2A2FA2C40001F090 /* Utilities */,
 				F3123D012A0A8E1F00E6F8AA /* Dashboard */,
 				F3123D002A0A8E1400E6F8AA /* Login */,
 				F3123D062A0A8E9F00E6F8AA /* ViewProtocol.swift */,
@@ -300,7 +314,7 @@
 				F3A817432A094EF8002DD130 /* Preview Content */,
 			);
 			path = SwiftUIImplementation;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		F3A817432A094EF8002DD130 /* Preview Content */ = {
 			isa = PBXGroup;
@@ -308,6 +322,23 @@
 				F3A817442A094EF8002DD130 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F3C3EB7D2A2FA2C40001F090 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F3C3EB7E2A2FA2E40001F090 /* WebSourcedImage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F3C3EB822A2FC3BE0001F090 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				F3C3EB832A2FC3DB0001F090 /* PostEntityToModelMapper.swift */,
+				F3C3EB852A2FC3F50001F090 /* PostsEnitityToModelMapper.swift */,
+			);
+			path = Posts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,17 +422,22 @@
 				F30ADFA82A0AAD0900BC2722 /* WebService.swift in Sources */,
 				F3123D072A0A8E9F00E6F8AA /* ViewProtocol.swift in Sources */,
 				F30ADFC72A0ADA7E00BC2722 /* UserModel.swift in Sources */,
+				F3C3EB812A2FC29C0001F090 /* PostManager.swift in Sources */,
 				F30ADFC12A0AD94F00BC2722 /* UsersEntity.swift in Sources */,
 				F3A817402A094EF6002DD130 /* LoginView.swift in Sources */,
+				F3C3EB842A2FC3DB0001F090 /* PostEntityToModelMapper.swift in Sources */,
 				F30ADFC92A0ADA9200BC2722 /* UsersModel.swift in Sources */,
 				F3123CFC2A0A8DC700E6F8AA /* DashboardView.swift in Sources */,
+				F3C3EB862A2FC3F50001F090 /* PostsEnitityToModelMapper.swift in Sources */,
 				F30ADFB62A0AADFB00BC2722 /* WebViewModel.swift in Sources */,
 				F30ADFB02A0AAD6C00BC2722 /* ApiEndpoints.swift in Sources */,
 				F30ADFD52A0AEF8C00BC2722 /* DashboardViewModel.swift in Sources */,
+				F3C3EB882A2FC4AC0001F090 /* PostsModel.swift in Sources */,
 				F30ADFD72A0AF10800BC2722 /* UserManager.swift in Sources */,
 				F30ADFDD2A0D8A4400BC2722 /* UsersEntityToModelMapper.swift in Sources */,
 				F30ADFDF2A0D8C9C00BC2722 /* Model.swift in Sources */,
 				F30ADFA62A0AACF700BC2722 /* ApiService.swift in Sources */,
+				F3C3EB7F2A2FA2E40001F090 /* WebSourcedImage.swift in Sources */,
 				F30ADFB82A0AD7CF00BC2722 /* HttpMethods.swift in Sources */,
 				F30ADFCB2A0ADADB00BC2722 /* PostModel.swift in Sources */,
 				F3A8173E2A094EF6002DD130 /* SwiftUIImplementationApp.swift in Sources */,

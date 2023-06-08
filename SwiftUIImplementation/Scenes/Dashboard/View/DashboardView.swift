@@ -11,65 +11,63 @@ struct DashboardView: View {
     @StateObject private var viewModel = DashboardViewModel()
     
     var body: some View {
-        let users = viewModel.users.users
-        let posts = viewModel.posts.posts
-        let detailedPosts = viewModel.postsWithUser
-        
+        var posts = viewModel.posts.posts
+        var isEnded = false
+
         VStack {
-            Text("Posts")
-            //create posts
-//            List {
-//                ForEach(detailedPosts) { post in
-//                    Text(post.postTitle)
-//                }
-//            }.task {
-//
-//                viewModel.getPostsWithUser()
-//            }
-//
+            VStack {
+                Text("Posts")
+                    .font(.system(size: 30))
+                    .bold()
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.bottom,20)
+            .background(Color.blue)
+            
             List {
                 ForEach(posts) { post in
-                    HStack {
-                        Text(post.title)
-                        Text(viewModel.userWith(id: post.userId).firstName)
-                    }
-                }
-            }.task {
-                viewModel.getPosts()
-            }
-            
-            List {
-                ForEach(users) { user in
+                    let specUser = viewModel.userWith(id: post.userId)
                     Section {
-                        HStack {
-                            AsyncImage(url: URL(string: user.image), content: { img in
-                                img.resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 50)
-                            }, placeholder: {
-                                ProgressView()
-                            })
-                            .background()
-                            .cornerRadius(30)
-                            Text(user.firstName)
-                            Text(user.lastName)
+                        VStack (alignment: .leading){
+                            HStack {
+                                    AsyncImage(url: URL(string: specUser.image), content: { img in
+                                        img.resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 50, height: 50)
+                                    }, placeholder: {
+                                        Image(systemName: "person.crop.circle")
+                                            .resizable()
+                                            .frame(width: 30,height: 30)
+                                    })
+                                    .background()
+                                    .cornerRadius(30)
+                                Text(specUser.firstName == "" ? "Unknown" : specUser.firstName)
+                                    .fontWeight(.bold)
+                            }
+                            Text(post.title)
                         }
                     }
-                    .listRowBackground(Color.gray)
+                    .task {
+                        if(posts.last?.userId == post.userId) {
+                            viewModel.limit += 1
+                            viewModel.getPosts()
+                            isEnded = true
+                        }
+                    }
+                    .refreshable {
+                        posts.removeAll()
+                        viewModel.onRefresh()
+                    }
                 }
+                .listRowBackground(Color.blue.opacity(0.3))
             }
-            .scrollContentBackground(.hidden)
-            //.onAppear old way to do a task
-//            .onAppear {
-//                viewModel.getUsers()
-//            }
-            //New is iOS15 .task
             .task {
                 viewModel.getUsers()
+                viewModel.getPosts()
             }
-            
-            .refreshable {
-                
+            .scrollContentBackground(.hidden)
+            if(isEnded) {
+                Text("No More To Present")
             }
         }
     }

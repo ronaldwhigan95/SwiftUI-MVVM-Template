@@ -11,8 +11,8 @@ import Foundation
 class PostManager: Manager {
     var webService = WebService()
     
-    func getPosts(completion: @escaping (Result<PostsModel, Error>) -> Void) {
-        webService.get(url: ApiEndpoints.Endpoints.posts.url, headers: nil, entity: PostsEntity.self) { result in
+    func getPosts(limitedTo limit: Int = 0, completion: @escaping (Result<PostsModel, Error>) -> Void) {
+        webService.get(url: ApiEndpoints.Endpoints.posts(limit: limit).url, headers: nil, entity: PostsEntity.self) { result in
             switch result {
             case .success(let data):
                 let mapper = PostsEntityToModelMapper()

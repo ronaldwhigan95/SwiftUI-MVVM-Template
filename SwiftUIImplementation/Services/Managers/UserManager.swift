@@ -11,8 +11,8 @@ import Foundation
 class UserManager: Manager {
     var webService = WebService()
     
-    func getUsers(completion: @escaping (Result<UsersModel, Error>) -> Void) {
-        webService.get(url: ApiEndpoints.Endpoints.users.url, headers: nil, entity: UsersEntity.self) { result in
+    func getUsers(limitedTo limit: Int = 0,completion: @escaping (Result<UsersModel, Error>) -> Void) {
+        webService.get(url: ApiEndpoints.Endpoints.users(limit: limit).url, headers: nil, entity: UsersEntity.self) { result in
             switch result {
             case .success(let data):
                 let mapper = UsersEntityToModelMapper()

@@ -16,11 +16,22 @@ class DashboardViewModel: WebViewModel, ObservableObject {
     
     @Published var postsWithUser = [PostWithUser(postUserId: 0, userImg: "",postUserName: "", postTitle: "", postBody: "")]
     
-    var itemsToShow = 5
-    let totalItems = Array(1...10)
+    var limit = 10
     
     func getUsers() {
-        manager.getUsers { [weak self] result in
+//        manager.getUsers { [weak self] result in
+//            switch result {
+//            case .success(let usersModel):
+//                DispatchQueue.main.async {
+//                    self?.users = usersModel
+//                }
+//            case .failure(let error):
+//                print("Error: \(error)")
+//            }
+//        }
+        
+        //Handle USERs, not a good idea to load all users.
+        manager.getUsers() { [weak self] result in
             switch result {
             case .success(let usersModel):
                 DispatchQueue.main.async {
@@ -33,40 +44,40 @@ class DashboardViewModel: WebViewModel, ObservableObject {
     }
     
     func getPosts() {
-        postManager.getPosts { [weak self] result in
-            switch result {
-            case .success(let postsModel):
-                DispatchQueue.main.async {
-                    self?.posts = postsModel
+        postManager.getPosts(limitedTo: limit) { [weak self] result in
+                switch result {
+                case .success(let postsModel):
+                    DispatchQueue.main.async {
+                        self?.posts = postsModel
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
-            }
         }
+//        postManager.getPosts { [weak self] result in
+//            switch result {
+//            case .success(let postsModel):
+//                DispatchQueue.main.async {
+//                    self?.posts = postsModel
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+    }
+    
+    func onRefresh() {
+        limit = 10
+        getPosts()
     }
     
     func userWith(id: Int) -> UserModel {
         users.users.first(where: {$0.id == id}) ?? .unknown
     }
-    
-    
-    func getPostsWithUser() {
-        for post in self.posts.posts {
-            for user in self.users.users {
-                if user.id == post.userId {
-                    let post = PostWithUser(postUserId: post.userId, userImg: user.image, postUserName: "\(user.firstName) \(user.lastName)", postTitle: post.title, postBody: post.body)
-                    
-                    self.postsWithUser.append(post)
-                    print(self.postsWithUser)
-                    
-                }
-            }
-        }
-    }
 }
 
 extension UserModel {
-    static let unknown = UserModel(id: -1, firstName: "Unknown", lastName: "Unknown", email: "", image: "")
+    static let unknown = UserModel(id: -1, firstName: "", lastName: "Unknown", email: "", image: "")
 }
 
 struct PostWithUser: Identifiable {
